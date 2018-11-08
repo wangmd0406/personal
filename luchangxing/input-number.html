@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Title</title>
+  <style>
+    body{
+      font-weight: 400;
+    }
+    .el-input-number {
+      position: relative;
+      display: inline-block;
+      width: 180px;
+      line-height: 38px;
+    }
+    .el-input-number__decrease {
+      left: 1px;
+      border-radius: 4px 0 0 4px;
+      border-right: 1px solid #dcdfe6;
+    }
+    .el-input-number__decrease, .el-input-number__increase {
+      position: absolute;
+      z-index: 1;
+      top: 1px;
+      width: 40px;
+      height: auto;
+      text-align: center;
+      background: #f5f7fa;
+      color: #606266;
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    .el-input-number {
+      line-height: 38px;
+    }
+    [class*=" el-icon-"], [class^=el-icon-] {
+      font-family: element-icons!important;
+      speak: none;
+      font-style: normal;
+      font-weight: 400;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+      vertical-align: baseline;
+      display: inline-block;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .el-input-number__decrease, .el-input-number__increase {
+      position: absolute;
+      z-index: 1;
+      top: 1px;
+      width: 40px;
+      height: auto;
+      text-align: center;
+      background: #f5f7fa;
+      color: #606266;
+      cursor: pointer;
+      font-size: 13px;
+    }
+    .el-icon-minus:before {
+      content: "\E621";
+    }
+    .el-input-number__decrease.is-disabled, .el-input-number__increase.is-disabled {
+      color: #c0c4cc;
+      cursor: not-allowed;
+    }
+    .el-input-number__increase {
+      right: 1px;
+      border-radius: 0 4px 4px 0;
+      border-left: 1px solid #dcdfe6;
+    }
+    .el-icon-plus:before {
+      content: "\E62B";
+    }
+    .el-input-number .el-input {
+      display: block;
+    }
+    .el-input {
+      position: relative;
+      font-size: 14px;
+      display: inline-block;
+      width: 100%;
+    }
+    .el-input::-webkit-scrollbar {
+      z-index: 11;
+      width: 6px;
+    }
+    .el-input-number .el-input__inner {
+      -webkit-appearance: none;
+      padding-left: 50px;
+      padding-right: 50px;
+      text-align: center;
+    }
+    .el-input__inner {
+      -webkit-appearance: none;
+      background-color: #fff;
+      background-image: none;
+      border-radius: 4px;
+      border: 1px solid #dcdfe6;
+      box-sizing: border-box;
+      color: #606266;
+      display: inline-block;
+      font-size: inherit;
+      height: 40px;
+      line-height: 40px;
+      outline: none;
+      padding: 0 15px;
+      transition: border-color .2s cubic-bezier(.645,.045,.355,1);
+      width: 100%;
+    }
+    button, input, select, textarea {
+      font-family: inherit;
+      font-size: inherit;
+      line-height: inherit;
+      color: inherit;
+    }
+    input {
+      -webkit-appearance: textfield;
+      background-color: white;
+      -webkit-rtl-ordering: logical;
+      cursor: text;
+      padding: 1px;
+      border-width: 2px;
+      border-style: inset;
+      border-color: initial;
+      border-image: initial;
+    }
+    input, textarea, select, button {
+      text-rendering: auto;
+      color: initial;
+      letter-spacing: normal;
+      word-spacing: normal;
+      text-transform: none;
+      text-indent: 0px;
+      text-shadow: none;
+      display: inline-block;
+      text-align: start;
+      margin: 0em;
+      font: 400 11px system-ui;
+    }
+  </style>
+</head>
+<body>
+<div>
+  <div class="el-input-number">
+      <span role="button" class="el-input-number__decrease">
+        <i class="el-icon-minus"></i>
+      </span>
+    <span role="button" class="el-input-number__increase is-disabled">
+        <i class="el-icon-plus"></i>
+      </span>
+    <div class="el-input">
+      <input type="text" autocomplete="off" aria-label="描述文字" max="10" min="1"
+             class="el-input__inner" role="spinbutton" aria-valuemax="10" aria-valuemin="1"
+             aria-valuenow="10" aria-disabled="undefined">
+    </div>
+  </div>
+</div>
+<section>
+  <style>
+    .input-number{
+      width: 140px;
+      height: 40px;
+      border:1px solid rgba(179,179,179,1);
+      position: relative;
+    }
+    .input-number span{
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      top: 0;
+      text-align: center;
+      line-height: 40px;
+      cursor: pointer;
+      background:rgba(238,238,238,1);
+      color: #808080;
+      font-size:18px;
+    }
+    .input-number span:nth-child(1){
+      left: 0;
+    }
+    .input-number span:nth-child(2){
+      right: 0;
+    }
+    .input-inner{
+      width: 60px;
+      height: 40px;
+      position: absolute;
+      top: 0;
+      left: 40px;
+      padding: 0;
+      margin: 0;
+      border: none;
+      text-align: center;
+      border-left:1px solid rgba(179,179,179,1);
+      border-right:1px solid rgba(179,179,179,1);
+    }
+  </style>
+  <div class="input-number">
+    <span class="input-number-minus">-</span>
+    <span class="input-number-add">+</span>
+    <div class="input-number-input">
+      <input type="text" min="1" max="99" class="input-inner" aria-valuenow="1">
+    </div>
+  </div>
+</section>
+</body>
+</html>

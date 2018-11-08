@@ -2,7 +2,7 @@
   <div>
     <!-- 底部 -->
     <div id="recommend">
-      <div class="wx" style="clear: both">
+      <div class="wx" style="clear: both" v-if="logStatus">
         <div class="nominate">
           <span class="fl">为你推荐</span>
           <span class="anniu fr">
@@ -53,8 +53,12 @@
     name: "footer",
     data() {
       return {
-        recommends: ''
+        recommends: '',
+        logStatus:true
       }
+    },
+    props:{
+      login:[Number]
     },
     methods: {
       post() {
@@ -66,10 +70,19 @@
           .catch((error) => {
             console.log('失败' + error);
           });
+      },
+      loginStatus() {
+        if (this.login === '1') {
+          this.logStatus = false
+        }
+        else {
+          this.logStatus = true
+        }
       }
     },
     mounted() {
-      this.post()
+      this.post();
+      this.loginStatus();
     }
   }
 </script>
@@ -78,7 +91,7 @@
   @import "../assets/comm/css/common.css";
   @import "../assets/css/footer.css";
   #recommend{
-    margin-top: 70px;
+    padding-top: 70px;
     background-color: #f5f5f5;
     padding-bottom: 40px;
   }

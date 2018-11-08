@@ -1,37 +1,6 @@
 <template>
   <div>
     <div class="slide" id="slide">
-      <div>
-        <!--轮播图-->
-        <!--<div class="swiper-container">-->
-        <!--<div class="swiper-wrapper">-->
-        <!--<div class="swiper-slide">-->
-        <!--<a href="javascript:;">-->
-        <!--<img src="../assets/images/首页_slices/banner_01@2x.png" height="460" width="1024"/>-->
-        <!--</a>-->
-        <!--</div>-->
-        <!--<div class="swiper-slide">-->
-        <!--<a href="javascript:;">-->
-        <!--<img src="../assets/images/首页_slices/banner_01@2x.png" height="460" width="1024"/>-->
-        <!--</a>-->
-        <!--</div>-->
-        <!--<div class="swiper-slide">-->
-        <!--<a href="javascript:;">-->
-        <!--<img src="../assets/images/首页_slices/banner_01@2x.png" height="460" width="1024"/>-->
-        <!--</a>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--&lt;!&ndash;&lt;!&ndash; 如果需要分页器 &ndash;&gt;&ndash;&gt;-->
-        <!--<div class="swiper-pagination"></div>-->
-
-        <!--&lt;!&ndash;&lt;!&ndash; 如果需要导航按钮 &ndash;&gt;&ndash;&gt;-->
-        <!--&lt;!&ndash;<div class="swiper-button-prev"></div>&ndash;&gt;-->
-        <!--&lt;!&ndash;<div class="swiper-button-next"></div>&ndash;&gt;-->
-
-        <!--&lt;!&ndash;&lt;!&ndash; 如果需要滚动条 &ndash;&gt;&ndash;&gt;-->
-        <!--&lt;!&ndash;<div class="swiper-scrollbar"></div>&ndash;&gt;-->
-        <!--</div>-->
-      </div>
 
       <swiper :options="swiperOption" ref="mySwiper">
         <!-- slides -->
@@ -56,16 +25,28 @@
 
       <div class="showing-nav">
         <ul id="hover" class="hover">
-          <li class="hover_index">
+          <li class="hover_index hover_brands">
             品牌
             <span>&gt;</span>
             <ul class="hover_item">
-              <!--<li v-for="brand in brands">-->
-              <!--<img :src="brand.images" alt="">-->
-              <!--</li>-->
               <li>
                 <a href="javascript:;">
-                  <img src="" alt="">
+                  朝阳轮胎
+                </a>
+              </li>
+              <li>
+                <a href="javascript:;">
+                  路通
+                </a>
+              </li>
+              <li>
+                <a href="javascript:;">
+                  <img src="../assets/images/首页_slices/pc-logo-02.png" alt="">
+                </a>
+              </li>
+              <li>
+                <a href="javascript:;">
+                  <img src="../assets/images/首页_slices/pc-logp-03.png" alt="">
                 </a>
               </li>
             </ul>
@@ -74,19 +55,15 @@
             规格
             <span>&gt;</span>
             <ul class="hover_item">
-              <li><a href="javascript:;">222</a></li>
-              <li><a href="javascript:;">222</a></li>
-              <li><a href="javascript:;">222</a></li>
-              <li><a href="javascript:;">222</a></li>
-              <li><a href="javascript:;">222</a></li>
-              <li><a href="javascript:;">222</a></li>
-              <li><a href="javascript:;">222</a></li>
-              <li><a href="javascript:;">222</a></li>
-              <li><a href="javascript:;">222</a></li>
-              <li><a href="javascript:;">222</a></li>
-              <li><a href="javascript:;">222</a></li>
-              <li><a href="javascript:;">222</a></li>
-              s
+              <li><a href="javascript:;">295/67R2E</a></li>
+              <li><a href="javascript:;">295/67R2E</a></li>
+              <li><a href="javascript:;">295/67R2E</a></li>
+              <li><a href="javascript:;">295/67R2E</a></li>
+              <li><a href="javascript:;">295/67R2E</a></li>
+              <li><a href="javascript:;">295/67R2E</a></li>
+              <li><a href="javascript:;">295/67R2E</a></li>
+              <li><a href="javascript:;">295/67R2E</a></li>
+              <li><a href="javascript:;">295/67R2E</a></li>
             </ul>
           </li>
           <li class="hover_index">
@@ -132,72 +109,6 @@
 </template>
 
 <script>
-  // import Swiper from 'swiper'
-  //
-  // export default {
-  //   name: "slide",
-  //   data() {
-  //     return {
-  //       brands: ''
-  //     }
-  //   },
-  //   components: {},
-  //   methods: {
-  //     post() {
-  //       this.$axios.post('http://lcx.zzcplus.com/api/goods/searchGoods', {page: '1', total: '10'})
-  //         .then((response) => {
-  //           this.brands = response.data.data.goodsList;
-  //         })
-  //         .catch((error) => {
-  //           console.log('失败' + error);
-  //         });
-  //     }
-  //   },
-  //   mounted() {
-  //     var mySwiper = new Swiper('.swiper-container', {
-  //       loop: true,
-  //       autoplay: true,
-  //       speed: 300,
-  //
-  //       // 鼠标移入手掌状态
-  //       grabCursor: true,
-  //
-  //       // 当没有足够的slide切换时，例如只有1个slide（非loop），swiper会失效且隐藏导航等
-  //       watchOverflow: true,
-  //
-  //       // 是否一次加载所有图片
-  //       preloadImages: false,
-  //
-  //       // 循环
-  //       loop: false,
-  //
-  //       // 鼠标模拟滑动
-  //       simulateTouch: true,
-  //
-  //       // 切换效果
-  //       // effect : 'fade',
-  //
-  //
-  //       // 如果需要分页器
-  //       pagination: {
-  //         el: '.swiper-pagination',
-  //         // type: 'custom'
-  //       },
-  //
-  //       // pagination:'.swiper-pagination',
-  //
-  //
-  //       // 如果需要前进后退按钮
-  //       nextButton: '.swiper-button-next',
-  //       prevButton: '.swiper-button-prev',
-  //       // 如果需要滚动条
-  //       scrollbar: '.swiper-scrollbar',
-  //     });
-  //     // mySwiper.on('click',alert('dianjile'));
-  //   }
-  // }
-
-
   import {swiper, swiperSlide} from 'vue-awesome-swiper';
 
   require('swiper/dist/css/swiper.css');
@@ -237,6 +148,20 @@
             // 点击跳转
             clickable: true,
           },
+        },
+        category: '',//类目
+        brands: '',//品牌
+        standard: '',//规格
+        speed: '',//速度
+        pattern: '',//轮胎花纹
+        layer: '',//层级
+        loadeight: '',//载重
+        purpose: '',//轮胎用途
+        road: '',//使用路面
+        position: '',//可用位置
+
+        postDataBrands: {
+          'enumCode': 'GOODS_BRAND'
         }
       }
     },
@@ -245,15 +170,20 @@
       swiperSlide
     },
     methods: {
-      stopPlay() {
-        // const slide = document.querySelector('#slide');
-        // this.swiperOption.autoplay = false;
-        // alert(this.swiperOption.autoplay);
-        // swiper.stop();
+      post(postData) {
+        this.$axios.post('http://lcx.zzcplus.com/api/goodsEnum/searchGoodsEnums', postData)
+          .then((response) => {
+            alert('商品选择项值集成功');
+            return response.data.data.goodsEnums.enumName;
+          })
+          .catch((error) => {
+            console.log(new Error('商品选择项值集获取失败' + error));
+            return '';
+          });
       }
     },
     mounted() {
-      this.stopPlay();
+      this.brands = this.post(this.postDataBrands);
     }
   }
 
@@ -279,17 +209,33 @@
 
   }
 
-  .swiper-pagination span {
+  .hover_item li {
+    width: 80px;
+    height: 30px;
+    margin-left: 13px;
+    margin-bottom: 27px;
+    text-align: center;
+    line-height: 30px;
+  }
+
+  .hover_brands li:nth-child(1) {
 
   }
 
-  .swiper-pagination .swiper-pagination-bullet {
-    width: 10px !important;
-    height: 10px !important;
-
+  .hover_brands li:nth-child(2) {
+    border: 1px solid rgba(82, 182, 33, 1);
   }
 
-  .swiper-pagination-bullet-active {
-
+  .hover_brands li:nth-child(2) a {
+    font-size: 14px;
+    color: rgba(82, 182, 33, 1);
+    font-family: MicrosoftYaHei;
+    font-weight: 400;
   }
+
+  .hover_brands li:nth-child(3), .hover_brands li:nth-child(4) {
+    border: 1px dashed #8c939d;
+  }
+
+
 </style>

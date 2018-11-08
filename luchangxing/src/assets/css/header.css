@@ -1,17 +1,19 @@
 /*导航部分*/
 
 .login_nav .wrapper{
-  width:1440px;
+  width:1024px;
   height:40px;
+  margin: auto;
   background:rgba(61,58,58,1);
 }
 .login_nav .wrapper ul{
-  padding-left: 842px;
+  float: right;
   padding-top:14px;
 }
 .login_nav .wrapper ul li{
   margin-right:15px;
   float: left;
+  line-height: 14px;
 }
 .login_nav .wrapper ul li:nth-child(even){
   width:1px;
@@ -24,6 +26,24 @@
   font-family:MicrosoftYaHei;
   font-weight:400;
   color:rgba(230,230,230,1);
+}
+
+.erCodeLi{
+  position: relative;
+}
+.erCode{
+  position: absolute;
+  top: 26px;
+  left: -48px;
+  width: 96px;
+  height: 0;
+  background-color: #5daf34;
+  box-shadow:0px 4px 3px 0px rgba(84,84,84,0.08);
+  z-index: 5;
+  transition: height .5s ease;
+}
+.erCodeLi:hover .erCode{
+  height: 96px;
 }
 /*title部分*/
 .wx {
@@ -101,7 +121,7 @@
   height: 50px;
   padding-top: 40px;
   margin-right: 97px;
-  background: url(../images/首页_slices/logo.png) no-repeat left;
+  background: url(../images/首页_slices/logo@2x.png) no-repeat left;
   background-size: 160px;
 }
 /* 头部导航 */
@@ -111,10 +131,43 @@
 .header_nav a:hover {
   color: red;
 }
+
+.tags-search{
+  height: 50px;
+  width: 650px;
+
+  margin-top: 25px;
+}
+
+.tags{
+  width: 380px;
+  height: 50px;
+  overflow: hidden;
+}
+
+.tags>li{
+  margin: 0;
+  padding: 0;
+  width: 50px;
+  height: 50px;
+  float: left;
+  line-height: 50px;
+  text-align: center;
+  margin: 0 6px;
+}
+.tags>li>a{
+  font-size:16px;
+  font-family:MicrosoftYaHei;
+  font-weight:400;
+  color:rgba(153,145,145,1);
+}
+.tags>li>a:hover{
+  color:rgba(82,182,33,1);
+}
+
 .search {
   width: 250px;
   height: 50px;
-  margin-top: 25px;
   position: relative;
 }
 .search .input_search {
@@ -123,6 +176,15 @@
   left: 0px;;
   width: 250px;
   height: 50px;
+  padding-right: 65px;
+  padding-left: 20px;
+}
+.search .input_search::placeholder {
+  text-align: right;
+  font-size:13px;
+  font-family:MicrosoftYaHei;
+  font-weight:400;
+  color:rgba(117,117,117,1);
 }
 .search .submit{
   position: absolute;
@@ -130,7 +192,7 @@
   right: 0px;
   width: 50px;
   height: 50px;
-  background: url(../images/首页_slices/search.png) no-repeat center;
+  background: url(../images/首页_slices/search@2x.png) no-repeat center;
   background-size: 15px;
   cursor: pointer;
 }

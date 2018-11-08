@@ -1,9 +1,10 @@
 <template>
   <div>
-    <Header></Header>
+    <Header nick-name="你好，请登录"></Header>
     <Slide></Slide>
     <HomeBody></HomeBody>
     <Footer></Footer>
+    <Aside></Aside>
   </div>
 </template>
 
@@ -11,7 +12,8 @@
   import Header from '../components/header';
   import Footer from '../components/footer';
   import HomeBody from '../components/home_body';
-  import Slide from '../components/slide'
+  import Slide from '../components/slide';
+  import Aside from '../components/aside';
 
   export default {
     name: "HomePage",
@@ -22,8 +24,8 @@
       Header,
       Footer,
       HomeBody,
-      Slide
-      // API
+      Slide,
+      Aside
     }
   }
 </script>

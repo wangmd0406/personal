@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <router-link to="goodsDetails"><h1>商品详情</h1></router-link>
     <router-view></router-view>
   </div>
 </template>

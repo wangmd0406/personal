@@ -1,92 +1,5 @@
 <template>
   <div>
-    <!--&lt;!&ndash; 轮播图&ndash;&gt;-->
-    <!--<div class="Sowing wx">-->
-    <!--<div class="Sowing_nav">-->
-    <!--<ul id="hover" class="hover">-->
-    <!--<li class="hover_index">-->
-    <!--品牌-->
-    <!--<ul class="hover_item">-->
-    <!--<li v-for="brand in brands">-->
-    <!--<img :src="brand.images" alt="">-->
-    <!--</li>-->
-    <!--<li v-for="brand in brands">-->
-    <!--<img :src="brand.images" alt="">-->
-    <!--</li>-->
-    <!--<li v-for="brand in brands">-->
-    <!--<img :src="brand.images" alt="" class="hover_in">-->
-    <!--</li>-->
-    <!--<li v-for="brand in brands">-->
-    <!--<img :src="brand.images" alt="" class="hover_in">-->
-    <!--</li>-->
-    <!--</ul>-->
-    <!--</li>-->
-    <!--<li class="hover_index">-->
-    <!--规格-->
-    <!--<ul class="hover_item">-->
-    <!--<li>222</li>-->
-
-    <!--</ul>-->
-    <!--</li>-->
-    <!--<li class="hover_index">-->
-    <!--花纹-->
-    <!--<ul class="hover_item">-->
-    <!--<li>333</li>-->
-    <!--</ul>-->
-    <!--</li>-->
-    <!--<li class="hover_index">-->
-    <!--用途-->
-    <!--<ul class="hover_item">-->
-    <!--<li>444</li>-->
-    <!--</ul>-->
-    <!--</li>-->
-    <!--<li class="hover_index">-->
-    <!--时速-->
-    <!--<ul class="hover_item">-->
-    <!--<li>555</li>-->
-    <!--</ul>-->
-    <!--</li>-->
-    <!--<li class="hover_index">-->
-    <!--路面-->
-    <!--<ul class="hover_item">-->
-    <!--<li>666</li>-->
-    <!--</ul>-->
-    <!--</li>-->
-    <!--<li class="hover_index">-->
-    <!--载重量-->
-    <!--<ul class="hover_item">-->
-    <!--<li>777</li>-->
-    <!--</ul>-->
-    <!--</li>-->
-    <!--</ul>-->
-    <!--</div>-->
-    <!--<script src="../"></script>-->
-
-    <!--<div class="Sowing_img">-->
-    <!--<ul>-->
-    <!--<li>-->
-    <!--<a href="#">-->
-    <!--<img src="../assets/images/首页_slices/banner_01.png" alt="" class="active">-->
-    <!--</a>-->
-    <!--</li>-->
-    <!--</ul>-->
-    <!--</div>-->
-
-    <!--&lt;!&ndash; 轮播点 &ndash;&gt;-->
-    <!--<div class="lbd">-->
-    <!--<span></span>-->
-    <!--<span></span>-->
-    <!--<span></span>-->
-    <!--<span></span>-->
-    <!--</div>-->
-    <!--</div>-->
-
-    <!--&lt;!&ndash; 轮胎信息 &ndash;&gt;-->
-    <!--<div class="ltxx wx">-->
-    <!--<ul class="ltxx_box">-->
-    <!--<li class="ltxx_box_item" v-for="">{{}}</li>-->
-    <!--</ul>-->
-    <!--</div>-->
 
     <!-- 轮胎列表 -->
     <div class="wx">
@@ -119,9 +32,15 @@
           </div>
           <div class="clear"></div>
           <div class="goods_bottom">
-            <p class="goods_title">
+            {{soldNum}}
+            <p class="goods_title" v-if="(todo.soldNum != '0')">
+            <!--获取人名在哪-->
+            <strong>{{todo.salePrice}}</strong>&nbsp;&nbsp;等{{todo.soldNum}}位客户购买过该轮胎
+            <a href="javascript:;" title="加入购物车"><span class="goods_add"></span></a>
+          </p>
+            <p class="goods_title" v-else="(todo.soldNum = '0')">
               <!--获取人名在哪-->
-              <strong>{{todo.salePrice}}</strong>&nbsp;&nbsp;等{{todo.soldNum}}位客户购买过该轮胎
+              <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>&nbsp;&nbsp;暂时没有用户购买过该轮胎
               <a href="javascript:;" title="加入购物车"><span class="goods_add"></span></a>
             </p>
 
@@ -133,14 +52,7 @@
         <div class="clear"></div>
 
         <!-- 底部内容分页 -->
-        <div class="goods_page">
-          <li v-show="hide"><a href="javascript:;">上一页</a></li>
-          <li><a href="javascript:;" class="page_active">{{page}}</a></li>
-          <li><a href="javascript:;">{{page+1}}</a></li>
-          <li><a href="javascript:;">{{page+2}}</a></li>
-          <li><a href="javascript:;">{{page+3}}</a></li>
-          <li><a href="javascript:;">下一页</a></li>
-        </div>
+        <nextPage :total="total" :current-page='current' @pagechange="pagechange"></nextPage>
       </div>
     </div>
 
@@ -153,6 +65,8 @@
 
 <script>
   // 当前页
+  import nextPage from '../components/nextPage.vue'
+
   export default {
     name: "home_body",
     data() {
@@ -162,32 +76,45 @@
         page: '',
         hide: true,
         postData:
-          {page: '1', total: '18'}
+          {
+            page: '1',
+            total: '18' //获取条数
+          },
+        total: 150,     // 记录总条数
+        display: 18,   // 每页显示条数
+        current: 1,   // 当前的页数
 
       }
     },
+    components: {
+      nextPage
+    },
+    computed:{
+
+    },
     methods: {
-      postGoods() {
-        this.$axios.post('http://lcx.zzcplus.com/api/goods/searchGoods',this.postData)
+      pagechange: function (currentPage) {
+        console.log(currentPage);
+        // ajax请求, 向后台发送 currentPage, 来获取对应的数据
+        this.postData.page = currentPage;
+        this.postGoods(this.postData);
+      },
+      postGoods(postData) {
+        this.$axios.post('http://lcx.zzcplus.com/api/goods/searchGoods', postData)
           .then((response) => {
             this.todos = response.data.data.goodsList;
             this.page = response.data.data.currentPage;
+            this.total = response.data.data.totalCount;
             console.log(this.page);
             console.log('成功');
           })
           .catch((error) => {
             console.log('失败' + error);
           });
-      },
-      hide_prev() {
-        if (this.page != 1) {
-          this.hide = false;
-        }
       }
     },
     mounted() {
-      this.postGoods();
-      this.hide_prev();
+      this.postGoods(this.postData);
     },
     computed() {
 
@@ -198,10 +125,10 @@
 <style scoped>
   @import "../assets/comm/css/common.css";
   @import "../assets/css/home_body.css";
-  /*@import "https://unpkg.com/element-ui/lib/theme-chalk/index.css";*/
   .wx {
     margin-top: 50px;
     height: auto;
+    padding-bottom: 70px;
   }
 
   .goods_item li {
