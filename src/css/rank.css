@@ -75,6 +75,8 @@ header {
 
 .active {
     display: block;
+color: #c33030;
+    border-bottom-color: #c33030;    
 }
 
 .item:hover .tab-con .active {
