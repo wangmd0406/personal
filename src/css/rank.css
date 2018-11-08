@@ -90,17 +90,20 @@ header {
 }
 
 .con2 {
-    left: calc(-25vw + 4px);
+    /*left: calc(-25vw + 4px);*/
+    left: calc(-25vw);
 }
 
 .con3 {
     /*left: -50vw;*/
-    left: calc(-50vw + 8px);
+    /*left: calc(-50vw + 8px);*/
+    left: calc(-50vw);
 }
 
 .con4 {
     /*left: -75vw;*/
-    left: calc(-75vw + 12px);
+    /*left: calc(-75vw + 12px);*/
+    left: calc(-75vw);
 }
 
 .tab-con-li {
