@@ -18,7 +18,7 @@
 </div>
 <section>
     <ul class="tab">
-        <li class="item">总收益
+        <li class="item item-active">总收益
             <ul class="tab-con con1 active">
                 <li class="tab-con-li">
                     <a href="page2.html">
@@ -758,5 +758,13 @@
         </li>
     </ul>
 </section>
+<script>
+    window.onload=function () {
+        var item_active = document.querySelector('.item-active');
+        item_active.onmouseover=function () {
+            item_active.setAttribute('class','item');
+        }
+    }
+</script>
 </body>
 </html>

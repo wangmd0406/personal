@@ -55,6 +55,11 @@ header {
     position: relative;
 }
 
+.item-active{
+    color: #c33030;
+    border-bottom-color: #c33030;
+}
+
 .item:hover {
     color: #c33030;
     border-bottom-color: #c33030;
@@ -75,8 +80,6 @@ header {
 
 .active {
     display: block;
-color: #c33030;
-    border-bottom-color: #c33030;    
 }
 
 .item:hover .tab-con .active {
