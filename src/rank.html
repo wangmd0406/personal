@@ -760,8 +760,9 @@
 </section>
 <script>
     window.onload=function () {
+        var tab = document.querySelector('.tab');
         var item_active = document.querySelector('.item-active');
-        item_active.onmouseover=function () {
+        tab.onmouseover=function () {
             item_active.setAttribute('class','item');
         }
     }
