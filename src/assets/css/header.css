@@ -1,0 +1,341 @@
+/*导航部分*/
+
+.login_nav .wrapper{
+  width:1024px;
+  height:40px;
+  margin: auto;
+  background:rgba(61,58,58,1);
+}
+.login_nav .wrapper ul{
+  float: right;
+  padding-top:14px;
+}
+.login_nav .wrapper ul li{
+  margin-right:15px;
+  float: left;
+  line-height: 14px;
+}
+.login_nav .wrapper ul li:nth-child(even){
+  width:1px;
+  height:13px;
+  background:rgba(255,255,255,1);
+}
+.login_nav .wrapper ul li a{
+  display: block;
+  font-size:12px;
+  font-family:MicrosoftYaHei;
+  font-weight:400;
+  color:rgba(230,230,230,1);
+}
+
+.erCodeLi{
+  position: relative;
+}
+.erCode{
+  position: absolute;
+  top: 22px;
+  left: -48px;
+  width: 96px;
+  height: 0;
+  /*background-color: #5daf34;*/
+  box-shadow:0px 4px 3px 0px rgba(84,84,84,0.08);
+  background-image: url("../images/首页_slices/erweima@2x.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  z-index: 5;
+  transition: height .5s ease;
+}
+.erCodeLi:hover .erCode{
+  height: 96px;
+}
+/*title部分*/
+.wx {
+  position: relative;
+}
+.r_nav {
+  width:35px;
+  height:990px;
+  background:rgba(0,0,0,1);
+  opacity:0.5;
+  z-index: 9999;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  padding-top: 322px
+}
+.r_nav .my .image{
+  width: 23px;
+  height: 23px;
+  margin: auto;
+  background: url(../images/首页_slices/mine.png) no-repeat center/16px;
+}
+.r_nav .my .ismy {
+  color: white;
+  text-align: center;
+  font-size: 12px;
+}
+.r_nav .hengxian {
+  width: 23px;
+  height: 2px;
+  background: #555;
+  margin: 18px auto;
+}
+.r_nav .dd_img {
+  width: 23px;
+  height: 23px;
+  margin: auto;
+  background: url(../images/首页_slices/order.png) no-repeat center/16px;
+}
+.r_nav .dingdan,
+.r_nav .user {
+  color: white;
+  text-align: center;
+  font-size: 12px;
+}
+.r_nav .user_logo{
+  margin: 429px auto 0px;
+  width: 23px;
+  height: 23px;
+  font-size: 12px;
+  background: url(../images/首页_slices/service.png) no-repeat center/16px;
+}
+.r_nav .top {
+  width: 23px;
+  height: 23px;
+  margin:  auto;
+  background: url(../images/首页_slices/top.png) no-repeat center/19px;
+}
+
+
+/* 头部 */
+.header {
+  width: 100%;
+  height: 40px;
+  background: #3D3A3A;
+}
+.logo {
+  height: 99px;
+  width: 100%;
+  line-height: 99px;
+  box-sizing: border-box;
+}
+/*.logo_img {*/
+  /*width: 160px;*/
+  /*height: 50px;*/
+  /*padding-top: 40px;*/
+  /*margin-right: 97px;*/
+  /*background: url(../images/首页_slices/logo@2x.png) no-repeat left;*/
+  /*background-size: 160px;*/
+/*}*/
+/* 头部导航 */
+.header_nav a {
+  color: black;
+}
+.header_nav a:hover {
+  color: red;
+}
+
+.tags-search{
+  height: 50px;
+  width: 650px;
+
+  margin-top: 25px;
+}
+
+.tags{
+  width: 380px;
+  height: 50px;
+  overflow: hidden;
+}
+
+.tags>li{
+  margin: 0;
+  padding: 0;
+  width: 50px;
+  height: 50px;
+  float: left;
+  line-height: 50px;
+  text-align: center;
+  margin: 0 6px;
+}
+.tags>li>a{
+  font-size:16px;
+  font-family:MicrosoftYaHei;
+  font-weight:400;
+  color:rgba(153,145,145,1);
+}
+.tags>li>a:hover{
+  color:rgba(82,182,33,1);
+}
+
+.search {
+  width: 250px;
+  height: 50px;
+  position: relative;
+}
+.search .input_search {
+  position: absolute;
+  top: 0px;
+  left: 0px;;
+  width: 250px;
+  height: 50px;
+  padding-right: 65px;
+  padding-left: 20px;
+}
+.search .input_search::placeholder {
+  text-align: right;
+  font-size:13px;
+  font-family:MicrosoftYaHei;
+  font-weight:400;
+  color:rgba(117,117,117,1);
+}
+.search .submit{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 50px;
+  height: 50px;
+  background: url(../images/首页_slices/search@2x.png) no-repeat center;
+  background-size: 15px;
+  cursor: pointer;
+}
+.iframe {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* 商品详情 */
+.paginal {
+  height: 51px;
+  line-height: 51px;
+}
+/* 轮胎详情 */
+.lunbotu {
+  width: 400px;
+  height: 400px;
+  position: relative;
+}
+.lunbotu_item .lunbotu_img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  border: 3px solid red;
+}
+.jiantou {
+  width: 100%;
+  height: 70px;
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  margin-top: -35px;
+}
+.jiantou .left,
+.jiantou .right {
+  width: 43px;
+  height: 70px;
+  font-size: 20px;
+  text-align: center;
+  line-height: 70px;
+}
+.jiantou .left:hover,
+.jiantou .right:hover {
+  background:rgba(0,0,0,1);
+  opacity:0.3;
+  color: white;
+}
+.disflex {
+  display: flex;
+}
+.lunbotu_xinghao {
+  flex: 1;
+  padding-left: 27px;
+}.lunbotu_xinghao h1{
+   margin-bottom: 24px;
+ }
+.lunbotu_xinghao_item li {
+  height: 40px;
+  line-height: 40px;
+  margin: 0px 18px 17px 0px;
+  padding: 0px 31px;
+  color: #52B621;
+  border:1px solid rgba(82,182,33,1);
+  border-radius:20px;
+}
+.price {
+  font-size: 24px;
+}
+.lunbotu_xinghao .price {
+  margin-top: 59px;
+
+}
+.lunbotu_xinghao .price a{
+  color: red;
+}
+.price_item1 {
+  margin-right: 57px;
+}
+.price_span {
+  margin-right: 52px;
+}
+
+/* 购物车 */
+.shopping_index {
+  margin-right: 67px;
+}
+.shopping {
+  margin-top: 54px;
+}
+.shopping .btn_reduce,
+.shopping .btn_add {
+  width:39px;
+  height:38px;
+  cursor:pointer;
+  background:rgba(238,238,238,1);
+  border:1px solid rgba(179,179,179,1);
+}
+.shopping .input {
+  width: 69px;
+  height: 38px;
+  text-align: center;
+}
+.jian {
+  margin: 0px 22px 0px 13px;
+}
+
+/* table切换 */
+.tab {
+  width: 100%;;
+  height: 146px;
+  line-height: 146px;
+  margin-bottom: 44px;
+  position: relative;
+}
+.tab_item {
+  width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 89px;
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  margin-top: -45px;
+}
+.tab_item_index {
+  width: 89px;
+  height: 89px;
+  border:1px solid rgba(232, 232, 232, 1);
+}
+.tab_item_index img {
+  width: 100%;
+}
+/* 采购单 */
+.purchase .accede {
+  width:299px;
+  height:53px;
+  color: white;
+  margin-left: 438px;
+  background:rgba(0,87,171,1);
+}

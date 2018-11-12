@@ -1,0 +1,124 @@
+.red {
+  box-sizing: border-box;
+  border: 1px solid red;
+}
+
+.slide {
+  width: 1024px;
+  height: 460px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/*导航*/
+.showing-nav {
+  width: 210px;
+  height: 460px;
+  background: rgba(0, 0, 0, .5);
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  left: 0;
+}
+
+.hover {
+  width: 100%;
+  height: 400px;
+  padding-left: 0px;
+}
+
+.hover_index {
+  width: calc(100% - 30px);
+  height: 36px;
+  font-size: 14px;
+  line-height: 36px;
+  font-family: MicrosoftYaHei;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  list-style: none;
+  padding-left: 30px;
+  cursor: pointer;
+  position: relative;
+}
+
+.hover_index span {
+  float: right;
+  margin-right: 30px;
+
+}
+
+.hover_item {
+  display: none;
+  position: absolute;
+  width: 273px;
+  height: 460px;
+  background: rgba(253, 253, 253, 1);
+  border: 1px solid rgba(229, 229, 229, 1);
+  box-shadow: 0px 4px 10px 1px rgba(84, 84, 84, 0.25);
+  left: 210px;
+  top: -18px;
+  z-index: 6;
+  padding: 30px 20px;
+  box-sizing: border-box;
+}
+
+.hover_index:nth-child(1) .hover_item {
+  padding: 20px 10px;
+  width: 128px;
+}
+
+.hover_index:nth-child(2) .hover_item {
+  top: -54px;
+}
+
+.hover_index:nth-child(3) .hover_item {
+  top: -90px;
+}
+
+.hover_index:nth-child(4) .hover_item {
+  top: -126px;
+}
+
+.hover_index:nth-child(5) .hover_item {
+  top: -162px;
+}
+
+.hover_index:nth-child(6) .hover_item {
+  top: -198px;
+}
+
+.hover_index:nth-child(7) .hover_item {
+  top: -234px;
+}
+
+.hover_index:hover {
+  background: rgba(82, 182, 33, 1);
+}
+
+.hover_index:hover .hover_item {
+  display: block;
+}
+
+/*.hover_index:nth-child(2) .hover_item {*/
+  /*display: block;*/
+/*}*/
+
+.hover_item li {
+  font-size: 14px;
+  color: #1E1E1E;
+  list-style: none;
+  width: 110px;
+  float: left;
+  margin: 10px 0;
+  text-align: center;
+}
+.hover_item li a{
+  font-size: 14px;
+  color: #1E1E1E;
+  list-style: none;
+  text-decoration: none;
+}
+.hover_item li a:hover{
+  color:rgba(82,182,33,1);
+}
+

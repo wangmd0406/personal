@@ -1,0 +1,197 @@
+/* 轮播图 */
+.Sowing {
+  height: 460px;
+  position: relative;
+}
+
+.Sowing .Sowing_nav {
+  width: 210px;
+  height: 460px;
+  color: white;
+  padding-top: 2px;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 1);
+  opacity: 0.5;
+  position: relative;
+}
+
+.Sowing .Sowing_nav li {
+  height: 36px;
+  padding-left: 31px;
+  line-height: 36px;
+}
+
+.Sowing .Sowing_img img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.Sowing .lbd {
+  position: absolute;
+  bottom: 24px;
+  right: 36px;
+}
+
+.Sowing .lbd span {
+  width: 10px;
+  height: 10px;
+  margin-right: 8px;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.hover_item {
+  width: 128px;
+  height: 460px;
+  line-height: 36px;
+  text-align: center;
+  color: black;
+  display: none;
+  background-color: #fff;
+  position: absolute;
+  top: 0px;
+  left: 210px;
+  z-index: 9999;;
+}
+
+.hover_item li {
+  height: 36px;
+  line-height: 36px;
+  margin-top: 26px;
+  position: relative;
+}
+
+.hover_item li img {
+  width: 80px;
+  height: 30px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -40px;
+  margin-top: -15px;
+}
+
+.hover_item .hover_in {
+  border: 2px dashed #1E1E1E;
+}
+
+/* 轮胎信息 */
+.ltxx {
+  height: 50px;
+  line-height: 50px;
+}
+
+/* 轮胎列表 */
+.goods_list {
+  width: 320px;
+  height: 400px;
+  text-align: center;
+  margin: 0px 21px 28px 0px;
+  background: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(238, 238, 238, 1);
+  box-sizing: border-box;
+  position: relative;
+}
+
+.goods_list .translate {
+  width: 80px;
+  height: 30px;
+  position: absolute;
+  top: 12px;
+  left: 13px;
+}
+
+.goods_pic {
+  width: 100%;
+  display: block;
+}
+
+.goods_top {
+  width: 318px;
+  height: 355px;
+  overflow: hidden;
+  position: relative;
+
+}
+
+.goods_top .goods_pic_information {
+  position: absolute;
+  bottom: -117px;
+  left: 0px;
+  width: 286px;
+  padding-left: 16px;
+  padding-right: 16px;
+  background: rgba(0, 0, 0, 1);
+  opacity: 0.7;
+  border: 1px solid rgba(238, 238, 238, 1);
+  transition: all .3s linear;
+}
+
+.goods_tag {
+  height: 100%;
+}
+
+/*.goods_top:hover .goods_pic_information  {*/
+/*height: 117px;*/
+/*bottom: 0;*/
+/*}*/
+.goods_list:hover .goods_pic_information {
+  height: 117px;
+  bottom: 0;
+}
+
+.goods_bottom {
+  width: 286px;
+  height: 41px;
+}
+
+.goods_title{
+  width: 318px;
+  text-align: left;
+  text-indent: 1em;
+  margin-top: 10px;
+  font-size:14px;
+  font-family:MicrosoftYaHei;
+  font-weight:400;
+  color:rgba(97,97,97,1);
+}
+
+.goods_add {
+  background-image: url("../images/首页_slices/add.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  float: right;
+  width: 20px;
+  height: 20px;
+  background-size: 90%;
+  margin-right: 1em;
+  margin-top: 1px;
+  display: none;
+}
+.goods_list:hover .goods_add {
+  display: block;
+}
+
+.goods_item {
+  height: 52px;
+  line-height: 52px;
+  font-size: 18px;
+  color: white;
+}
+
+.goods_tag p {
+  float: left;
+  padding: 0px 12px;
+  /*margin: 5px 9px;*/
+  margin-right: 9px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: 1px solid rgba(82, 182, 33, 1);
+  border-radius: 10px;
+  color: #52B621;
+  font-size: 12px;
+}
+
